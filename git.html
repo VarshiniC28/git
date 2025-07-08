@@ -2,16 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git and GitHub Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Learning complete Git and GitHub - </h1>
-    <p>How to sync the commit of old repo to new local cloned repo(new repo is the copy of the old which was clone to
-        new folder)</p>
-    <p>Syncing The commits of old repo to the commits of new folder that we clone(local repo not remote repo) </p>
+    <h1>Learning Complete Git and GitHub</h1>
+
+    <p><strong>Topic:</strong> Syncing commits between old and new cloned repositories (local-to-local)</p>
+
+    <p>
+        Suppose you clone an existing remote repository (Repo A) into a new folder on your machine (creating Repo B).
+        You make some changes in Repo B, commit them, and push them to the remote repository.
+    </p>
+
+    <p>
+        Now, when you run <code>git log</code> in the new local repository (Repo B), you will see both the old commits
+        and your new commits.
+        The changes are also visible on the remote repository because you pushed them.
+    </p>
+
+    <p>
+        However, if you go back to the old local repository (Repo A) and check the logs using <code>git log</code>,
+        you won’t see the new commits made from Repo B immediately.
+    </p>
+
+    <p>
+        To update the old local repository (Repo A) with the latest commits from the remote, run:
+    </p>
+
+    <pre><code>git fetch</code></pre>
+
+    <p>
+        After fetching, you can see the new commits using:
+    </p>
+
+    <pre><code>git log origin/main</code></pre>
+
+    <p>
+        This shows the updated commit history from the remote (which was pushed by the new repo).
+    </p>
+
+    <p><strong>Summary:</strong></p>
+    <ul>
+        <li>Commits are stored locally unless pushed.</li>
+        <li>Each cloned repo is independent but connected to the same remote.</li>
+        <li>To sync another local repo, use <code>git fetch</code> to get remote changes.</li>
+    </ul>
 </body>
 
 </html>
