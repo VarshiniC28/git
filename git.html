@@ -68,6 +68,19 @@
         This shows the updated commit history from the remote (which was pushed by the new repo).
     </p>
 
+    <p>
+        Even though the code has changed in the GitHub remote repository (after pushing from the new repo),
+        the code in the old local repo is not updated.
+        To update it:
+    </p>
+
+    <ul>
+        <li>Run <code>git fetch</code> to get the latest commit history.</li>
+        <li>Run <code>git pull</code> to merge the changes into your local branch.</li>
+        <li>Then run <code>git log</code> to verify the new commits are now visible in the old local repo.</li>
+    </ul>
+
+
     <p><strong>Summary:</strong></p>
     <ul>
         <li>Commits are stored locally unless pushed.</li>
